@@ -122,6 +122,12 @@
   ],
   "ProjectList": [
     {
+      "slug": "rarepass-genesis",
+      "name": "RarePass: Genesis",
+      "externalUrl": "https://rarepass.superrare.com/",
+      "twitterUsername": "SuperRare"
+    },
+    {
       "slug": "aopanda-party",
       "name": "Aopanda Party",
       "externalUrl": "https://nft.aopanda.ainy-llc.com/site/",
@@ -9863,5 +9869,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1667913763905
+  "genTime": 1668640695034
 }
