@@ -1,5 +1,6 @@
-import {browser} from 'webextension-polyfill-ts';
-import '../core/message/index';
-import { handleTabInfo } from '../core/tab';
+import 'webextension-polyfill-ts';
+import '../core/message/background';
+import '../core/features/phasing-warning';
+import {initQueryTabIdBackgroundListener} from '../core/tab/idQuery';
 
-handleTabInfo();
+initQueryTabIdBackgroundListener();
