@@ -743,7 +743,7 @@ async function _detectScam(
               (domainSim.sim > simDayLimit ? simRegLimit : domainRegLimit);
           if (isRecentRegister) {
             similarProject = domainSim;
-            // if (hasContext && !fuzzyTwitterCheck) similarProject = null;
+            if (hasContext && !fuzzyTwitterCheck) similarProject = null;
             break;
           } else {
             // console.log("not recent", domainMeta);

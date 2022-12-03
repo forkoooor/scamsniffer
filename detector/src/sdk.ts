@@ -30,6 +30,11 @@ export type DetectResult = {
   estimateFinish?: number;
 }
 
+export type Options = {
+  desc?: string
+  wait?: boolean
+}
+
 export class DetectorAPI {
   apiKey: string;
   endpoint: string;
@@ -41,20 +46,25 @@ export class DetectorAPI {
     this.checkInterval = checkInterval;
   }
 
-  async detect(link: string, force = false) {
+  async detect(link: string, force = false, opts: Options = {
+    wait: true
+  }) {
     let detectRes: DetectResult | null = null;
     for (let index = 0; index < 30; index++) {
       let waitTime = this.checkInterval * 1000;
       try {
         const forceDetect = index === 0 ? force : false;
-        const result = await this._callAPI(link, forceDetect);
+        const result = await this._callAPI(link, forceDetect, 10 * 1000, opts);
+        if (!opts.wait) {
+          detectRes = result;
+          break;
+        }
         if (result.details) {
           detectRes = result;
           break;
         }
       } catch(e) {
         waitTime = 10 * 1000;
-        console.log('error', e)
       }
       await new Promise((resolve) => {
         setTimeout(resolve, waitTime);
@@ -64,8 +74,10 @@ export class DetectorAPI {
     return detectRes;
   }
 
-  async _callAPI(url: string, force = false, timeout = 10 * 1000) {
-    const callUrl = `${this.endpoint}/api/detect?link=`+ encodeURIComponent(url) + '&force='+ (force ? '1' : '0');
+  async _callAPI(url: string, force = false, timeout = 10 * 1000, opts: Options) {
+    const callUrl = `${this.endpoint}/api/detect?link=`+ encodeURIComponent(url) 
+    + '&force='+ (force ? '1' : '0') 
+    + (opts.desc ? '&desc='+ encodeURIComponent(opts.desc) : '');
     const response = await Promise.race([
         fetch(callUrl, {
           headers: {
