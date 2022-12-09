@@ -122,6 +122,48 @@
   ],
   "ProjectList": [
     {
+      "slug": "cockpunch",
+      "name": "The Legend of CÃ˜CKPUNCHâ„¢",
+      "externalUrl": "http://cockpunch.com",
+      "twitterUsername": "cockpunch"
+    },
+    {
+      "slug": "valhalla",
+      "name": "Valhalla",
+      "externalUrl": "http://joinvalhalla.com",
+      "twitterUsername": "valhalla"
+    },
+    {
+      "slug": "rtfkt-animus-egg",
+      "name": "RTFKT Animus Egg í ¾íµš",
+      "externalUrl": null,
+      "twitterUsername": "RTFKT"
+    },
+    {
+      "slug": "dori-samurai",
+      "name": "Dori Samurai",
+      "externalUrl": "https://nft.bueno.art/mint/0ps0zLlgBLT_H6BB8TgpC",
+      "twitterUsername": "DoriSamurai"
+    },
+    {
+      "slug": "3d-invisible-friends",
+      "name": "3D Invisible Friends",
+      "externalUrl": null,
+      "twitterUsername": "InvsbleFriends"
+    },
+    {
+      "slug": "cel-mates-by-mcbess",
+      "name": "Cel Mates by Mcbess",
+      "externalUrl": "https://celmates.wtf/",
+      "twitterUsername": "cel_mates"
+    },
+    {
+      "slug": "thememes6529",
+      "name": "The Memes by 6529",
+      "externalUrl": "https://6529.io/collections/the-memes/",
+      "twitterUsername": "6529er"
+    },
+    {
       "slug": "rarepass-genesis",
       "name": "RarePass: Genesis",
       "externalUrl": "https://rarepass.superrare.com/",
@@ -9869,5 +9911,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1668640695034
+  "genTime": 1670595453704
 }
