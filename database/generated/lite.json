@@ -122,6 +122,12 @@
   ],
   "ProjectList": [
     {
+      "slug": "noble-cards-season-one",
+      "name": "Noble Cards: Season One",
+      "externalUrl": "http://oncyber.io/noble",
+      "twitterUsername": "Artifaction2"
+    },
+    {
       "slug": "cockpunch",
       "name": "The Legend of CØCKPUNCH™",
       "externalUrl": "http://cockpunch.com",
@@ -9911,5 +9917,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1670595453704
+  "genTime": 1670648977369
 }
