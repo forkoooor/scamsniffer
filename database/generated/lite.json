@@ -122,6 +122,12 @@
   ],
   "ProjectList": [
     {
+      "slug": "noble-gallery",
+      "name": "Noble Gallery",
+      "externalUrl": "http://oncyber.io/noblegallery",
+      "twitterUsername": "Artifaction2"
+    },
+    {
       "slug": "1337-skulls",
       "name": "1337 skulls",
       "externalUrl": "https://1337skulls.xyz/",
@@ -9923,5 +9929,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1670803922074
+  "genTime": 1670867906877
 }
