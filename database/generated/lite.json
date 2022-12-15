@@ -122,6 +122,12 @@
   ],
   "ProjectList": [
     {
+      "slug": "lilkami",
+      "name": "Lil Kami",
+      "externalUrl": "https://www.lilkami.com/",
+      "twitterUsername": "LilKamiNFT"
+    },
+    {
       "slug": "noble-gallery",
       "name": "Noble Gallery",
       "externalUrl": "http://oncyber.io/noblegallery",
@@ -153,7 +159,7 @@
     },
     {
       "slug": "rtfkt-animus-egg",
-      "name": "RTFKT Animus Egg í ¾íµš",
+      "name": "RTFKT Animus Egg ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
       "externalUrl": null,
       "twitterUsername": "RTFKT"
     },
@@ -9929,5 +9935,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1670867906877
+  "genTime": 1671085640448
 }
