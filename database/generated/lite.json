@@ -122,6 +122,12 @@
   ],
   "ProjectList": [
     {
+      "slug": "mntge-pass",
+      "name": "MNTGE Pass",
+      "externalUrl": null,
+      "twitterUsername": "mntge_io"
+    },
+    {
       "slug": "trump-digital-trading-cards",
       "name": "Trump Digital Trading Cards",
       "externalUrl": "http://collecttrumpcards.com",
@@ -9947,5 +9953,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1671282130348
+  "genTime": 1671291760021
 }
