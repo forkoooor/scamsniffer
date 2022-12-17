@@ -122,6 +122,18 @@
   ],
   "ProjectList": [
     {
+      "slug": "trump-digital-trading-cards",
+      "name": "Trump Digital Trading Cards",
+      "externalUrl": "http://collecttrumpcards.com",
+      "twitterUsername": "CollectTrump"
+    },
+    {
+      "slug": "the-beacon-arbi",
+      "name": "The Beacon",
+      "externalUrl": "https://thebeacon.gg",
+      "twitterUsername": "The_Beacon_GG"
+    },
+    {
       "slug": "lilkami",
       "name": "Lil Kami",
       "externalUrl": "https://www.lilkami.com/",
@@ -6104,7 +6116,7 @@
       "slug": "terraforms",
       "name": "Terraforms by Mathcastles",
       "externalUrl": "http://mathcastles.xyz",
-      "twitterUsername": null
+      "twitterUsername": "mathcastles"
     },
     {
       "slug": "nuclear-nerds-of-the-accidental-apocalypse",
@@ -9935,5 +9947,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1671085640448
+  "genTime": 1671282130348
 }
