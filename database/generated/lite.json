@@ -122,6 +122,12 @@
   ],
   "ProjectList": [
     {
+      "slug": "mutant-hound-collars",
+      "name": "Mutant Hound Collars",
+      "externalUrl": "https://www.mutantdao.com/",
+      "twitterUsername": "MutantHounds"
+    },
+    {
       "slug": "mntge-pass",
       "name": "MNTGE Pass",
       "externalUrl": null,
@@ -9953,5 +9959,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1671291760021
+  "genTime": 1671376760354
 }
