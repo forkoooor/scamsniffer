@@ -122,6 +122,12 @@
   ],
   "ProjectList": [
     {
+      "slug": "helix-land",
+      "name": "HELIX - PARALLEL CITY LAND",
+      "externalUrl": "https://helixmetaverse.com",
+      "twitterUsername": "HELIX_Metaverse"
+    },
+    {
       "slug": "mutant-hound-collars",
       "name": "Mutant Hound Collars",
       "externalUrl": "https://www.mutantdao.com/",
@@ -9959,5 +9965,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1671376760354
+  "genTime": 1671615995297
 }
