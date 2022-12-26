@@ -122,6 +122,18 @@
   ],
   "ProjectList": [
     {
+      "slug": "yaypegs",
+      "name": "Yaypegs",
+      "externalUrl": "http://yaypegs.com",
+      "twitterUsername": "yaypegs"
+    },
+    {
+      "slug": "savage-nation",
+      "name": "Savage Nation",
+      "externalUrl": "https://savagenationnft.com",
+      "twitterUsername": "savagenationnft"
+    },
+    {
       "slug": "helix-land",
       "name": "HELIX - PARALLEL CITY LAND",
       "externalUrl": "https://helixmetaverse.com",
@@ -9965,5 +9977,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1671615995297
+  "genTime": 1672021938428
 }
