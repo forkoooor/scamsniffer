@@ -122,6 +122,18 @@
   ],
   "ProjectList": [
     {
+      "slug": "eth-gobblers",
+      "name": "ETH GOBBLERS",
+      "externalUrl": "http://xmas.omakasea.com",
+      "twitterUsername": "omakaseadev"
+    },
+    {
+      "slug": "tabz",
+      "name": "TABZ NFT",
+      "externalUrl": "http://degenz.finance",
+      "twitterUsername": "TABZ_NFT"
+    },
+    {
       "slug": "yaypegs",
       "name": "Yaypegs",
       "externalUrl": "http://yaypegs.com",
@@ -9977,5 +9989,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1672021938428
+  "genTime": 1672111002682
 }
