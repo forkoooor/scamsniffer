@@ -122,6 +122,12 @@
   ],
   "ProjectList": [
     {
+      "slug": "ape-scientist-keycard",
+      "name": "Applied Primate Scientist Keycard",
+      "externalUrl": "https://www.appliedprimate.com/",
+      "twitterUsername": "AppliedPrimate"
+    },
+    {
       "slug": "eth-gobblers",
       "name": "ETH GOBBLERS",
       "externalUrl": "http://xmas.omakasea.com",
@@ -9989,5 +9995,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1672111002682
+  "genTime": 1672285353829
 }
