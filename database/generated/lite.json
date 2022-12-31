@@ -122,6 +122,18 @@
   ],
   "ProjectList": [
     {
+      "slug": "kubz",
+      "name": "Kubz",
+      "externalUrl": "http://keungz.com",
+      "twitterUsername": "keung"
+    },
+    {
+      "slug": "live-like-a-cat-nekonoyouniikiru",
+      "name": "Live Like A Cat -neko no youni ikiru-",
+      "externalUrl": "https://llac.fun/community/",
+      "twitterUsername": "shupeiman"
+    },
+    {
       "slug": "ape-scientist-keycard",
       "name": "Applied Primate Scientist Keycard",
       "externalUrl": "https://www.appliedprimate.com/",
@@ -9995,5 +10007,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1672285353829
+  "genTime": 1672495919053
 }
