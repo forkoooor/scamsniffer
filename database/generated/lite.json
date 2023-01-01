@@ -122,6 +122,12 @@
   ],
   "ProjectList": [
     {
+      "slug": "jimmyyachtclub",
+      "name": "Jimmy Yacht Club",
+      "externalUrl": "https://jimmyyachtclub.gitbook.io/",
+      "twitterUsername": "JimmyYachtClub"
+    },
+    {
       "slug": "kubz",
       "name": "Kubz",
       "externalUrl": "http://keungz.com",
@@ -10007,5 +10013,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1672495919053
+  "genTime": 1672564937594
 }
