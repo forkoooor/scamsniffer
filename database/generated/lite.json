@@ -122,6 +122,18 @@
   ],
   "ProjectList": [
     {
+      "slug": "toys-by-0xtechno",
+      "name": "Toys by 0xTechno",
+      "externalUrl": "https://toys.0xtechno.art/",
+      "twitterUsername": "0xTechno"
+    },
+    {
+      "slug": "the-pendings",
+      "name": "The Pendings",
+      "externalUrl": null,
+      "twitterUsername": "thependings"
+    },
+    {
       "slug": "jimmyyachtclub",
       "name": "Jimmy Yacht Club",
       "externalUrl": "https://jimmyyachtclub.gitbook.io/",
@@ -10013,5 +10025,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1672564937594
+  "genTime": 1672794672827
 }
