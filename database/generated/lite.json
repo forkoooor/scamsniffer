@@ -122,6 +122,18 @@
   ],
   "ProjectList": [
     {
+      "slug": "thecaptainz",
+      "name": "The Captainz",
+      "externalUrl": "http://memeland.com/captainz",
+      "twitterUsername": "Memeland"
+    },
+    {
+      "slug": "basedheads",
+      "name": "BasedHeads",
+      "externalUrl": "https://based-af.com/",
+      "twitterUsername": "we_are_BasedAF"
+    },
+    {
       "slug": "toys-by-0xtechno",
       "name": "Toys by 0xTechno",
       "externalUrl": "https://toys.0xtechno.art/",
@@ -10025,5 +10037,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1672794672827
+  "genTime": 1673255767854
 }
