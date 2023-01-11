@@ -122,6 +122,12 @@
   ],
   "ProjectList": [
     {
+      "slug": "feetpixwtf",
+      "name": "feetpix.wtf",
+      "externalUrl": "https://feetpix.wtf/",
+      "twitterUsername": "feetpixwtf"
+    },
+    {
       "slug": "thecaptainz",
       "name": "The Captainz",
       "externalUrl": "http://memeland.com/captainz",
@@ -10037,5 +10043,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1673255767854
+  "genTime": 1673407849784
 }
