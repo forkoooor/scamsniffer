@@ -59,10 +59,13 @@ async function checkAndUpdate(item) {
     if (ipInfo) {
       const { input, data } = ipInfo;
       item.ip = input;
-      item.abuseMail = data ? data.abuse && data.abuse.email : null;
-      item.asn = data ? data.asn && data.asn.asn : null;
-      item.company = data ? data.company && data.company.name : null;
-      item.raw = data ? JSON.stringify(data) : null;
+      console.log("ip", input)
+      if (data) {
+        item.abuseMail = data ? data.abuse && data.abuse.email : null;
+        item.asn = data ? data.asn && data.asn.asn : null;
+        item.company = data ? data.company && data.company.name : null;
+        item.raw = data ? JSON.stringify(data) : null;
+      }
     }
 
     if (error) {
