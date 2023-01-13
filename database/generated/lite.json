@@ -122,6 +122,24 @@
   ],
   "ProjectList": [
     {
+      "slug": "dreadfulz",
+      "name": "Dreadfulz",
+      "externalUrl": "https://stake.dreadfulz.com",
+      "twitterUsername": "DreadfulzNFT"
+    },
+    {
+      "slug": "mineablepunks",
+      "name": "MineablePunks",
+      "externalUrl": "http://mpunks.org",
+      "twitterUsername": "mineable_punks"
+    },
+    {
+      "slug": "mutant-hounds",
+      "name": "Mutant Hounds",
+      "externalUrl": null,
+      "twitterUsername": "lior_eth"
+    },
+    {
       "slug": "feetpixwtf",
       "name": "feetpix.wtf",
       "externalUrl": "https://feetpix.wtf/",
@@ -10043,5 +10061,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1673407849784
+  "genTime": 1673580523605
 }
