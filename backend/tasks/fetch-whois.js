@@ -106,7 +106,6 @@ async function detectRecentDomain() {
     const recentDomain = recentDomains[index];
     try {
       await checkAndUpdate(recentDomain);
-      console.log("recentDomain", recentDomain);
     } catch (e) {
       console.log("error", e);
     }
