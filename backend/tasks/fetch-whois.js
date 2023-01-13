@@ -59,7 +59,7 @@ async function checkAndUpdate(item) {
     if (ipInfo) {
       const { input, data } = ipInfo;
       item.ip = input;
-      console.log("ip", input)
+      console.log("ip", item.host, input)
       if (data) {
         item.abuseMail = data ? data.abuse && data.abuse.email : null;
         item.asn = data ? data.asn && data.asn.asn : null;
@@ -69,6 +69,7 @@ async function checkAndUpdate(item) {
     }
 
     if (error) {
+      console.log("error", error)
       item.needReport = 6;
     }
     if (data && !error) {
