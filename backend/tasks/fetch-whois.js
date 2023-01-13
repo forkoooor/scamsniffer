@@ -39,8 +39,8 @@ async function getIpInfo(host) {
       },
     });
     return data;
-  } catch {
-    console.log("error");
+  } catch (err){
+    console.log("error", err.toString());
   }
   return {
     input: recentIp,
