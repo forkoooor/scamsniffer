@@ -3,6 +3,10 @@ const { DomainSummary } = require("../schema");
 const dns = require("dns");
 const { Op } = require("sequelize");
 
+require("dotenv").config();
+
+const IPINFO_API = process.env.IPINFO_API;
+
 const dayLimit = 20;
 
 async function getDomainIp(domain) {
@@ -20,24 +24,8 @@ async function getIpInfo(host) {
   const state = await getDomainIp(host);
   if (state.err) return null;
   const recentIp = state.result[0];
-  const url = `https://ipinfo.io/widget/demo/${recentIp}`;
   try {
-    const { data } = await axios.get(url, {
-      headers: {
-        "Sec-Ch-Ua": '(Not(A:Brand";v="8", "Chromium";v="101',
-        "Sec-Ch-Ua-Mobile": "?0",
-        "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36",
-        "Sec-Ch-Ua-Platform": "Windows",
-        "Content-Type": "application/json",
-        "Sec-Fetch-Site": "same-origin",
-        "Sec-Fetch-Mode": "cors",
-        "Sec-Fetch-Dest": "empty",
-        Referer: "https://ipinfo.io/",
-        "Accept-Encoding": "gzip, deflate",
-        "Accept-Language": "en-US,en;q=0.9",
-      },
-    });
+    const { data } = await axios.get(`${IPINFO_API}&ip=${recentIp}`);
     return data;
   } catch (err){
     console.log("error", err.toString());
