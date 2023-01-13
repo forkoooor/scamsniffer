@@ -69,7 +69,7 @@ async function checkAndUpdate(item) {
     }
 
     if (error) {
-      console.log("error", error)
+      console.log("error", item.topDomain, error)
       item.needReport = 6;
     }
     if (data && !error) {
