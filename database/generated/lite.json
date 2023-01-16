@@ -122,6 +122,24 @@
   ],
   "ProjectList": [
     {
+      "slug": "vv-checks",
+      "name": "Checks - VV Edition",
+      "externalUrl": "https://checks.art",
+      "twitterUsername": "jackbutcher"
+    },
+    {
+      "slug": "akidcalledbeast",
+      "name": "a KID called BEAST",
+      "externalUrl": "https://akidcalledbeast.com",
+      "twitterUsername": "akidcalledbeast"
+    },
+    {
+      "slug": "funapes-nft",
+      "name": "FunApes NFT",
+      "externalUrl": "https://www.funapes.io/",
+      "twitterUsername": "FunApes_NFT"
+    },
+    {
       "slug": "dreadfulz",
       "name": "Dreadfulz",
       "externalUrl": "https://stake.dreadfulz.com",
@@ -10061,5 +10079,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1673580523605
+  "genTime": 1673849343005
 }
