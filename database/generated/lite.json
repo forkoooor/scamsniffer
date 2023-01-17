@@ -122,6 +122,12 @@
   ],
   "ProjectList": [
     {
+      "slug": "createra-genesis-land",
+      "name": "Createra Genesis Land",
+      "externalUrl": "https://createra.fun/",
+      "twitterUsername": "Createra_"
+    },
+    {
       "slug": "vv-checks",
       "name": "Checks - VV Edition",
       "externalUrl": "https://checks.art",
@@ -10079,5 +10085,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1673849343005
+  "genTime": 1673915532805
 }
