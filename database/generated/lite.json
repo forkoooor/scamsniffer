@@ -122,6 +122,12 @@
   ],
   "ProjectList": [
     {
+      "slug": "kubz-relic",
+      "name": "Kubz Relic",
+      "externalUrl": null,
+      "twitterUsername": "keung"
+    },
+    {
       "slug": "createra-genesis-land",
       "name": "Createra Genesis Land",
       "externalUrl": "https://createra.fun/",
@@ -10085,5 +10091,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1673915532805
+  "genTime": 1673966704803
 }
