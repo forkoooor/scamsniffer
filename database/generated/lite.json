@@ -122,6 +122,18 @@
   ],
   "ProjectList": [
     {
+      "slug": "sewerpass",
+      "name": "Sewer Pass",
+      "externalUrl": "https://mdvmm.xyz/",
+      "twitterUsername": "BoredApeYC"
+    },
+    {
+      "slug": "hasbinft",
+      "name": "HasbullaNFT",
+      "externalUrl": "http://cryptohasbullanft.com/",
+      "twitterUsername": "Hasbulla_NFT"
+    },
+    {
       "slug": "kubz-relic",
       "name": "Kubz Relic",
       "externalUrl": null,
@@ -10091,5 +10103,5 @@
       "twitterUsername": "SwapdexO"
     }
   ],
-  "genTime": 1673966704803
+  "genTime": 1674193579059
 }
