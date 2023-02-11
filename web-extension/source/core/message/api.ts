@@ -23,7 +23,7 @@ export async function setTwitterCardAction(info: any) {
 
 export async function checkTabIsMismatch(tabId: number, url: string) {
   try {
-    const tabData = tabInfoManager.query(tabId);
+    const tabData = tabInfoManager.queryInital(tabId);
     if (!tabData) return null;
     const cardInfo = cacheCards.get(tabData.url);
     if (!cardInfo) return null;
@@ -36,7 +36,6 @@ export async function checkTabIsMismatch(tabId: number, url: string) {
       };
     }
   } catch (e) {
-    console.log('checkTabIsMismatch', e);
   }
   return null;
 }

@@ -47,7 +47,7 @@ export async function getConfig(): Promise<any> {
     try {
       return JSON.parse(configStr);
     } catch {
-      console.log('error');
+      // 
     }
   }
   return {};

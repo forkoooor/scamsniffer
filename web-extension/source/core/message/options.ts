@@ -14,5 +14,9 @@ const isBackground = isEnvironment(Environment.ManifestBackground);
 const options = {
   channel: channel.bind(MessageTarget.Broadcast),
   preferLocalImplementation: isBackground,
+  strict: {
+    methodNotFound: isBackground,
+    unknownMessage: true,
+  },
 };
 export default options;

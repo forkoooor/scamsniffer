@@ -27,7 +27,7 @@ function collectOpenseaAsset() {
         const view = renderScamAssetTip(node, context);
         pageViews.set(metadata, view);
       } catch {
-        console.log('mutation observe');
+        // 
       }
       return {
         onRemove: () => {
@@ -56,7 +56,7 @@ function collectOpenseaAsset() {
         const view = renderScamAssetTip(node.parentNode, context, false);
         pageViews.set(metadata, view);
       } catch (e) {
-        console.log('error', e);
+        // 
       }
       return {
         onRemove: () => {

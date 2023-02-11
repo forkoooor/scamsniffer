@@ -1,5 +1,6 @@
 import ScamDialog from './ScamDialog';
 import {RPC} from '../core/message/client';
+import {clientQueryTabId} from '../core/tab/idQuery';
 
 import {
   setupPortalShadowRoot,
@@ -20,6 +21,7 @@ export async function renderScamDialog() {
 
 (async () => {
   const isDisabled = await RPC.isFeatureDisabled('webpage');
+  await clientQueryTabId();
   if (!isDisabled) {
     renderScamDialog();
   }
