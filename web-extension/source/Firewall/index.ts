@@ -15,18 +15,10 @@ async function sendConfig() {
     RPC.getConfig(),
     RPC.isFeatureDisabled('firewall'),
   ]);
-  // const isDisabled = await RPC.isFeatureDisabled("firewall");
   updateFirewallConfig({
     isDisabled,
     simulation: config,
   });
-  // updateFirewallConfig({
-  //   simulation: {
-  //     account: 'ScamSniffer',
-  //     apiKey: 'zam8lOrECdXk8zEJfN19cBnWTPYrOzh1',
-  //     project: 'project'
-  //   }
-  // })
 }
 
 function injectScript() {
@@ -47,15 +39,5 @@ function injectScript() {
 }
 
 injectScript();
-
-// (async () => {
-//   const startTime = Date.now();
-//   const isDisabled = await RPC.isFeatureDisabled("firewall");
-//   const spend = Date.now() - startTime;
-//   console.log('spend', spend)
-//   if (!isDisabled) {
-//     injectScript();
-//   }
-// })();
 
 export {};
