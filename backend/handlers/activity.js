@@ -17,25 +17,25 @@ async function adScamActivity(req, res) {
     }
   }
 
-  const parsed = getTopDomain(item.activity.link);
-  const domainStat = await DomainSummary.findOne({
-    where: {
-      host: parsed.host,
-    },
-  });
-  
-  if (domainStat) {
-    domainStat.count = domainStat.count + 1;
-    await domainStat.save();
-  } else {
-    await DomainSummary.create({
-      host: parsed.host,
-      topDomain: parsed.topDomain,
-      count: 1,
-    });
-  }
-
   try {
+
+    const parsed = getTopDomain(item.activity.link);
+    const domainStat = await DomainSummary.findOne({
+      where: {
+        host: parsed.host,
+      },
+    });
+    
+    if (domainStat) {
+      domainStat.count = domainStat.count + 1;
+      await domainStat.save();
+    } else {
+      await DomainSummary.create({
+        host: parsed.host,
+        topDomain: parsed.topDomain,
+        count: 1,
+      });
+    }
     await ScamActivity.create(item.activity);
     res.json({
       msg: "reported",
