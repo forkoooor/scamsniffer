@@ -1,7 +1,7 @@
 import { browser } from "webextension-polyfill-ts";
 import { Box } from "@mui/material";
 import Setting from "./Setting";
-import Config from "./Config";
+import Article from "./Article";
 import Divider from '@mui/material/Divider';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Links from "./Links";
@@ -79,7 +79,7 @@ const Popup: React.FC = () => {
           </Box>
           <Setting />
           <Divider />
-          <Config />
+          <Article />
           <div className={classes.links}>
             <Links />
           </div>

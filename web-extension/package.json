@@ -1,6 +1,6 @@
 {
   "name": "ScamSniffer",
-  "version": "0.0.11",
+  "version": "0.0.15",
   "description": "Help people against with the crypto scammers",
   "private": true,
   "license": "AGPL",
@@ -30,7 +30,7 @@
     "@material-ui/styles": "^4.11.5",
     "@mui/icons-material": "5.8.3",
     "@mui/material": "5.8.0",
-    "@scamsniffer/detector": "0.0.22",
+    "@scamsniffer/detector": "0.0.23",
     "advanced-css-reset": "^1.2.2",
     "async-call-rpc": "^6.1.0",
     "emoji-log": "^1.0.2",

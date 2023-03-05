@@ -74,6 +74,19 @@ export default function SwitchListSecondary() {
           inputProps={{}}
         />
       </ListItem>
+
+      <ListItem>
+        <ListItemText
+          id="switch-list-label-bluetooth"
+          primary={t('transcation_simulation')}
+        />
+        <Switch
+          edge="end"
+          onChange={handleToggle('transcation_simulation')}
+          checked={checked.indexOf('transcation_simulation') === -1}
+          inputProps={{}}
+        />
+      </ListItem>
     </List>
   );
 }

@@ -1,6 +1,7 @@
 import type {ScamResult, PostDetail} from '@scamsniffer/detector';
 import {reportScam, Detector} from '@scamsniffer/detector';
 import byPassedOriginManager from '../features/phasing-warning/byPassedOriginManager';
+import type { CheckResponse } from "../bridge/types";
 import {
   enableAutoReport,
   getConfig,
@@ -9,6 +10,9 @@ import {
   setDisableFeature,
 } from '../storage';
 import tabInfoManager from '../tab/infoManager';
+
+const checkEndpoint = 'https://check-api.scamsniffer.io/v1/checkRequest';
+const configEndpoint = 'https://check-api.scamsniffer.io/v1/getConfig';
 
 // twitter card
 
@@ -29,8 +33,8 @@ export async function checkTabIsMismatch(tabId: number, url: string) {
     if (!cardInfo) return null;
     cacheCards.delete(tabData.url);
     const currentHost = new URL(url);
-    // check host
-    if (currentHost.host !== cardInfo.domain) {
+    const isSubDomain = currentHost.host.includes(cardInfo.domain)
+    if (!isSubDomain) {
       return {
         ...cardInfo,
       };
@@ -96,3 +100,30 @@ export async function checkNFT(contract: string, tokenId: string) {
   const result = await detector?.checkNFTToken(contract, tokenId);
   return result;
 }
+
+export async function checkSiteStatus(url: string) {
+  initDetector();
+  const result = await detector?.checkSiteStatus(url);
+  return result;
+}
+
+export async function checkRequest(payload: Request) : Promise<CheckResponse> {
+  console.log("checkRequest", payload)
+  const response = await fetch(checkEndpoint, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  }).then(c => c.json());
+
+  return response as CheckResponse;
+}
+
+export async function getRemoteConfig() {
+  const response = await fetch(configEndpoint).then(c => c.json());
+  return response as any;
+}
+
+

@@ -43,7 +43,7 @@ export default function IconButtons() {
       </IconButton>
       <IconButton
         aria-label="twitter"
-        onClick={() => openPage("https://github.com/scamsniffer/scamsniffer")}
+        onClick={() => openPage("https://github.com/scamsniffer")}
       >
         <GitHubIcon style={{ color: "white" }} />
       </IconButton>

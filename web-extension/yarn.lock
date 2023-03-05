@@ -1761,10 +1761,10 @@
   resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.11.5.tgz#db5a11bf66bdab39569719555b0f76e138d7bd64"
   integrity sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==
 
-"@scamsniffer/detector@0.0.22":
-  version "0.0.22"
-  resolved "https://registry.npmjs.org/@scamsniffer/detector/-/detector-0.0.22.tgz#69c88beacc0c0270ab76639939bb00da5549fb81"
-  integrity sha512-g+5zv+PClWW0FkBDRWP2v1Ii6dYytSM5XlEBjIHnOp8cZCk/5BYUyxbUitaW9IFOBGaOT748GxLC6GiYKh7acw==
+"@scamsniffer/detector@0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@scamsniffer/detector/-/detector-0.0.23.tgz#b5e02d450d7c6efce1914f908ec5a993e5021450"
+  integrity sha512-0d536eVNKSyih7NgMQeaB2XXr/ZgWxCD5oKhXU5luwv+FMpK+8Ts2z1QgRMYiaYrWaDTb+2EY83PD8tmedgVoQ==
   dependencies:
     "@types/isomorphic-fetch" "^0.0.36"
     "@types/node" "^17.0.35"

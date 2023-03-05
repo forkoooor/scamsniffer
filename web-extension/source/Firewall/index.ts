@@ -11,13 +11,17 @@ export const updateFirewallConfig = (config: any) => {
 };
 
 async function sendConfig() {
-  const [config, isDisabled] = await Promise.all([
+  const [config, isDisabled, transcationSimulationDisabled, remoteConfig] = await Promise.all([
     RPC.getConfig(),
     RPC.isFeatureDisabled('firewall'),
+    RPC.isFeatureDisabled('transcation_simulation'),
+    RPC.getRemoteConfig()
   ]);
   updateFirewallConfig({
     isDisabled,
+    transcationSimulationDisabled,
     simulation: config,
+    remoteConfig
   });
 }
 

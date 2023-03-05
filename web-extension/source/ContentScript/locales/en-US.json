@@ -10,6 +10,7 @@
     "setting": "Settings",
     "risk_assets": "Risk assets warning on Opensea",
     "scam_detection": "ScamSniffer webpage detection",
+    "transcation_simulation": "Transcation Simulation",
     "firewall_check": "Security Check",
     "siteBlocked": "Site Blocked",
     "misMatch": "Twitter Spoofing Detected"

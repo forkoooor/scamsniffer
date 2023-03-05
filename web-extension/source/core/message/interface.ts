@@ -3,6 +3,7 @@ import type {
   PostDetail,
   ScamResult,
 } from '@scamsniffer/detector';
+import { CheckResponse, Request } from "../bridge/types";
 
 export type API = {
   setTwitterCardAction: (info: any) => void;
@@ -18,6 +19,9 @@ export type API = {
   sendReportScam(result: ScamResult): Promise<void>;
   detectScam(post: PostDetail): Promise<ScamResult | null | undefined>;
   checkUrlInBlacklist(link: string): Promise<boolean | undefined>;
+  checkRequest(payload: Request) : Promise<CheckResponse>;
+  checkSiteStatus(url: string) : Promise<any>;
+  getRemoteConfig() : Promise<any>;
   checkNFT(
     contract: string,
     tokenId: string
