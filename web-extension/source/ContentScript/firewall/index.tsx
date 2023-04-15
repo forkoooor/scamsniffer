@@ -3,8 +3,9 @@ import {
   setupPortalShadowRoot,
   ReactRootShadowed,
   createReactRootShadowedPartial,
+  baseEl,
 } from "../../core/ShadowRoot";
-import "./i18n";
+// import "./i18n";
 import { setHandler } from "../../core/bridge/api";
 
 const firewall = {
@@ -13,11 +14,11 @@ const firewall = {
   }
 }
 
-function mountApp() {
+function mountApp(force = false) {
   const createReactRootShadowed = createReactRootShadowedPartial({
     preventEventPropagationList: [],
   });
-  const shadow = setupPortalShadowRoot({ mode: "closed" });
+  const shadow = setupPortalShadowRoot({ mode: "closed" }, force);
   let view: ReactRootShadowed | null = null;
   let counter = 1;
 
@@ -26,17 +27,46 @@ function mountApp() {
     view.render(<App firewall={firewall} />);
     counter++;
   }
+
+  var deletionObserver = new MutationObserver(
+    function (mutations) {
+      mutations.forEach((mutation) => {
+          if (mutation.type === 'childList') {
+            if (mutation.removedNodes.length > 0) {
+              mutation.removedNodes.forEach((node) => {
+                if (node === baseEl) {
+                  mountApp(true);
+                  deletionObserver.disconnect();
+                }
+              })
+             
+            }
+          }
+      })
+    }
+  );
+
+  if (baseEl && baseEl.parentNode) {
+    deletionObserver.observe(baseEl.parentNode, {
+      childList: true
+    });
+  }
+
   createAndRender();
 }
 
-setTimeout(() => {
-  // mountApp();
-}, 3000)
+function delayMount() {
+  // setTimeout(() => {
+  //   mountApp();
+  // }, 1)
+  mountApp();
+}
+
 /* @ts-ignore */
-// if (document.body) {
-//   mountApp();
-// } else {
-//   document.addEventListener("DOMContentLoaded", () => {
-//     mountApp();
-//   });
-// }
+if (document.body) {
+  delayMount();
+} else {
+  document.addEventListener("DOMContentLoaded", () => {
+    delayMount();
+  });
+}

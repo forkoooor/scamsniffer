@@ -12,6 +12,7 @@ export {
     setupPortalShadowRoot,
     createShadowRootForwardedComponent,
     createShadowRootForwardedPopperComponent,
+    baseEl
 } from './Portal'
 export { ShadowRootIsolation } from './ShadowRootIsolation'
 export { DisableShadowRootContext } from './Contexts'

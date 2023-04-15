@@ -139,13 +139,12 @@ export default function AlertDialog({ firewall }: { firewall: ListenAble }) {
   const [pageCheckResult, setPageCheckResult] = React.useState<any>(null);
   const [checkResponse, setCheckResponse] = React.useState<CheckResponse | null>(null);
   const [closeTimer, setCloseTimer] = React.useState<any>(null);
+  const [countdown, setCountdown] = React.useState<number|null>(null);
   const pageHost = window.location.host;
   // const location = useLocation();
 
-
   useEffect(() => {
     firewall.listenRequest(async (action: any) => {
-      console.log("listenRequest", action)
       setAction({
         raw: action
       });
@@ -165,14 +164,16 @@ export default function AlertDialog({ firewall }: { firewall: ListenAble }) {
       const pageEnv = getPageEnv();
       setCheckResults([]);
       setWarningInfo(null);
+      setCountdown(null);
       setCheckResponse(null);
       let allResults = [];
+      let hasBalanceChange = false;
       try {
         const [
           checkIssues
         ] = await Promise.all([
           RPC.checkRequest({
-            chainId: pageEnv.chainId || 1,
+            chainId: pageEnv.chainId || "0x1",
             url: window.location.href,
             origin: window.location.host,
             detail: action.raw.rawRequest
@@ -183,6 +184,7 @@ export default function AlertDialog({ firewall }: { firewall: ListenAble }) {
         setCheckResponse(checkIssues);
         const allCheckResults: any[] = checkIssues.issues;
 
+        hasBalanceChange = checkIssues && checkIssues.balanceChange.length > 0;
         const checkResults = allCheckResults.sort((a, b) => (b.order || 1) - (a.order || 1));
         const hasProblems = checkResults.filter(
           (_) => _ && _.status != 0
@@ -222,10 +224,21 @@ export default function AlertDialog({ firewall }: { firewall: ListenAble }) {
       } catch { }
 
       if (!allResults.length) {
+        const waitDelay = hasBalanceChange ? 6 * 1000 : 1 * 1000;
         const timer = setTimeout(() => {
           approveWaiter && approveWaiter(false);
           setOpen(false);
-        }, 3 * 1000);
+        }, waitDelay);
+        const timeEnd = new Date().getTime() + waitDelay;
+        const timeLeft = timeEnd - Date.now();
+        setCountdown(Math.floor(timeLeft/1000));
+        const counterdown = setInterval(() => {
+          const timeLeft = timeEnd - Date.now();
+          setCountdown(Math.floor(timeLeft/1000));
+          if(timeLeft < 0) {
+            clearInterval(counterdown);
+          }
+        }, 1100);
         setCloseTimer(timer);
       }
     };
@@ -440,7 +453,7 @@ export default function AlertDialog({ firewall }: { firewall: ListenAble }) {
           </Grid>
         </DialogActions>
       </WarringDialog>
-      <div onMouseEnter={onMouseEnter}>
+      <div>
         <CheckDialog
             open={open}
             pageHost={pageHost}
@@ -448,6 +461,7 @@ export default function AlertDialog({ firewall }: { firewall: ListenAble }) {
             action={action}
             checkResponse={checkResponse}
             checkListResult={checkListResult}
+            countdown={countdown}
             handleReject={handleReject}
             handApprove={handApprove}
           />

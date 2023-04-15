@@ -183,7 +183,6 @@ const ScamDialog = () => {
           {scamProject && <ScamAlert result={scamProject} />}
         </DialogContent>
       </WarringDialog>
-      <div>test</div>
     </ThemeProvider>
   );
 };

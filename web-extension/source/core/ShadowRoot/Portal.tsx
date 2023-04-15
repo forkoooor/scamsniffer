@@ -5,9 +5,11 @@ import { DisableShadowRootContext, PreventEventPropagationListContext, StyleShee
 
 let mountingPoint: HTMLDivElement
 let mountingShadowRoot: ShadowRoot
-export function setupPortalShadowRoot(init: ShadowRootInit) {
-    if (mountingShadowRoot) return mountingShadowRoot
-    mountingShadowRoot = document.body.appendChild(document.createElement('div')).attachShadow(init)
+export let baseEl: HTMLDivElement
+export function setupPortalShadowRoot(init: ShadowRootInit, force = false) {
+    if (mountingShadowRoot && !force) return mountingShadowRoot
+    baseEl = document.createElement('div')
+    mountingShadowRoot = document.body.appendChild(baseEl).attachShadow(init)
     mountingPoint = mountingShadowRoot.appendChild(document.createElement('div'))
     return mountingShadowRoot
 }

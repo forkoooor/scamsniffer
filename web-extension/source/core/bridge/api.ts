@@ -28,7 +28,6 @@ export async function setHandler(cb: any) {
 }
 
 export async function sendRequest(action: any) {
-  console.log('action', action)
-  const result = await approver(action);
-  return result;
+  const isBlock = approver ? await approver(action) : false;
+  return isBlock;
 }

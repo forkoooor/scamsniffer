@@ -67,6 +67,7 @@ export type Props = {
     checkResponse: CheckResponse | null;
     action: any;
     open: boolean;
+    countdown: number | null;
     handApprove: CallBack;
     handleReject: CallBack;
 }
@@ -150,7 +151,7 @@ function isTranscationSimulationDisabled() {
 
 
 export default function Content(props: Props) {
-    const { open, checking, checkResponse, pageHost, action, checkListResult, handApprove, handleReject } = props;
+    const { open, checking, checkResponse, pageHost, action, checkListResult, handApprove, handleReject, countdown } = props;
     const { t, i18n } = useTranslation();
     const tipOnew = getRandomTip();
     const [randomTip, setTip] = React.useState<any>(tipOnew);
@@ -290,12 +291,11 @@ export default function Content(props: Props) {
                     color: "#aaa",
                     textAlign: "center"
                 }}>
-                    Tips:
+                    Learn:
                     <a href={randomTip.link} style={{
                         color: "#aaa",
                         margin: '0.5rem',
-                    }} target="_
-                    ">{randomTip.title}</a>
+                    }} target="_blank">{randomTip.title}</a>
                 </Box> : null}
             </DialogContent>
             <DialogActions>
@@ -327,6 +327,7 @@ export default function Content(props: Props) {
                         variant="contained"
                     >
                         {t("approve")}
+                        {countdown !=null ? <span>({countdown})</span> : null}
                     </Button>
                     {/* {warningInfo ? (
               <ShadowRootTooltip

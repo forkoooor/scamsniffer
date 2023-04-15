@@ -17,12 +17,17 @@ async function sendConfig() {
     RPC.isFeatureDisabled('transcation_simulation'),
     RPC.getRemoteConfig()
   ]);
-  updateFirewallConfig({
-    isDisabled,
-    transcationSimulationDisabled,
-    simulation: config,
-    remoteConfig
-  });
+  for (let index = 0; index < 10; index++) {
+    updateFirewallConfig({
+      isDisabled,
+      transcationSimulationDisabled,
+      simulation: config,
+      remoteConfig
+    });
+    await new Promise((resolve) => {
+      setTimeout(resolve, 2 * 1000);
+    })
+  }
 }
 
 function injectScript() {

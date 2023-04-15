@@ -21,11 +21,10 @@ export default function SwitchListSecondary() {
   useAsync(async () => {
     setStatus(true)
     const config = await RPC.getRemoteConfig();
-    console.log('config', config)
-    setArticles(config.drops || []);
+    const articles = config.drops || [];
+    setArticles(articles.slice(0, 8));
     setStatus(false)
   }, []);
-
 
   return (
     <List

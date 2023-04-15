@@ -11,6 +11,7 @@ import './i18n';
 // Hide Opensea Warning
 // import "./Asset";
 
+
 export async function renderScamDialog() {
   const createReactRootShadowed = createReactRootShadowedPartial({
     preventEventPropagationList: [],

@@ -2,6 +2,7 @@ import type {ScamResult, PostDetail} from '@scamsniffer/detector';
 import {reportScam, Detector} from '@scamsniffer/detector';
 import byPassedOriginManager from '../features/phasing-warning/byPassedOriginManager';
 import type { CheckResponse } from "../bridge/types";
+import { parseDomain, ParseResultType } from "parse-domain";
 import {
   enableAutoReport,
   getConfig,
@@ -10,6 +11,8 @@ import {
   setDisableFeature,
 } from '../storage';
 import tabInfoManager from '../tab/infoManager';
+import urlParser from "url";
+import punycode from "punycode";
 
 const checkEndpoint = 'https://check-api.scamsniffer.io/v1/checkRequest';
 const configEndpoint = 'https://check-api.scamsniffer.io/v1/getConfig';
@@ -17,6 +20,50 @@ const configEndpoint = 'https://check-api.scamsniffer.io/v1/getConfig';
 // twitter card
 
 const cacheCards = new Map();
+
+export function getTopDomainFromUrl(url: string) {
+  let topDomain = null;
+  let domainName = null;
+  let topLevelDomainsName: string[] = [];
+  let subDomainsName: string[] = [];
+  let isPunyCode = false;
+  const host = urlParser.parse(url).host;
+  if (host === null) return null;
+  const parseResult = parseDomain(host);
+  switch (parseResult.type) {
+    case ParseResultType.Listed: {
+      const { domain, topLevelDomains, subDomains } = parseResult;
+      if (subDomains) subDomainsName = subDomains;
+      topDomain = [domain].concat(topLevelDomains).join(".");
+      if (domain) domainName = domain;
+      if (topLevelDomains) topLevelDomainsName = topLevelDomains;
+      break;
+    }
+    case ParseResultType.Reserved:
+    case ParseResultType.NotListed: {
+      const { hostname } = parseResult;
+      break;
+    }
+    // default:
+    //   throw new Error(`${host} is an ip address or invalid domain`);
+  }
+
+  if (domainName) {
+    const unicodeName = punycode.toUnicode(domainName);
+    isPunyCode = unicodeName != domainName;
+    if (isPunyCode) {
+      domainName = unicodeName
+    }
+  }
+  return {
+    isPunyCode,
+    topDomain,
+    domainName,
+    subDomainsName,
+    topLevelDomainsName,
+    host,
+  };
+}
 
 export async function setTwitterCardAction(info: any) {
   cacheCards.set(info.link, info);
@@ -32,9 +79,10 @@ export async function checkTabIsMismatch(tabId: number, url: string) {
     const cardInfo = cacheCards.get(tabData.url);
     if (!cardInfo) return null;
     cacheCards.delete(tabData.url);
-    const currentHost = new URL(url);
-    const isSubDomain = currentHost.host.includes(cardInfo.domain)
-    if (!isSubDomain) {
+    const domainInfo = getTopDomainFromUrl(url);
+    const cardDomainInfo = getTopDomainFromUrl(`https://${cardInfo.domain}`)
+    const isMisMacth = domainInfo?.topDomain != cardDomainInfo?.topDomain
+    if (isMisMacth) {
       return {
         ...cardInfo,
       };
@@ -108,7 +156,6 @@ export async function checkSiteStatus(url: string) {
 }
 
 export async function checkRequest(payload: Request) : Promise<CheckResponse> {
-  console.log("checkRequest", payload)
   const response = await fetch(checkEndpoint, {
     method: 'POST',
     headers: {
